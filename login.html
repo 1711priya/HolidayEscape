@@ -84,20 +84,24 @@
   </div>
   <script>
   
-    function myfun() {
+function myfun() {
       var username = "Priyanka";
       var password = "Priyanka@123";
 
       var name = document.f1.username.value;
       var pass = document.f1.password.value;
-      if (name==username && pass==password) {
+
+      if(name=="" || pass==""){
+        document.write("please provide creadentials");
+      }
+
+      else if (name==username && pass==password) {
         document.write("Logged in successfully");
-        location.href="http://127.0.0.1:5500/index.html";
+        window.location.href="index.html";
       }
      
-      else {
+      else if(name!==username || pass!==password){
       document.write("Login fail Please try again");
-      //  location.href="http://127.0.0.1:5500/login.html";
       }
     }
 
